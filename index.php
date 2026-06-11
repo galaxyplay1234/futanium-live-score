@@ -1,94 +1,89 @@
-<?php
+export default {
+  async fetch() {
 
-header('Content-Type: application/json; charset=utf-8');
+    try {
 
-function getHtml($url)
-{
-    $ch = curl_init();
+      const home = await fetch(
+        "https://www.futebolnatv.com.br/"
+      ).then(r => r.text())
 
-    curl_setopt_array($ch, [
-        CURLOPT_URL => $url,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_USERAGENT => 'Mozilla/5.0'
-    ]);
+      const links = [
+        ...new Set(
+          [...home.matchAll(/\/aovivo\/[a-z0-9\-]+\.html/gi)]
+            .map(x => x[0])
+        )
+      ]
 
-    $html = curl_exec($ch);
-    curl_close($ch);
+      const resultado = []
 
-    return $html;
-}
+      for (const link of links) {
 
-$home = getHtml("https://www.futebolnatv.com.br/");
+        const url =
+          "https://www.futebolnatv.com.br" + link
 
-preg_match_all(
-    '#/aovivo/[a-z0-9\-]+\.html#i',
-    $home,
-    $matches
-);
+        const html =
+          await fetch(url).then(r => r.text())
 
-$links = array_unique($matches[0]);
+        const times =
+          [...html.matchAll(/alt="([^"]+)" width="72" height="72"/g)]
 
-$resultado = [];
+        const casa = times[0]?.[1] || ""
+        const fora = times[1]?.[1] || ""
 
-foreach ($links as $link)
-{
-    $url = "https://www.futebolnatv.com.br" . $link;
+        const p1 =
+          html.match(/id="placar-time1"[^>]*>\s*([0-9]+)\s*</)
 
-    $html = getHtml($url);
+        const p2 =
+          html.match(/id="placar-time2"[^>]*>\s*([0-9]+)\s*</)
 
-    // Times
-    preg_match_all(
-        '/alt="([^"]+)" width="72" height="72"/',
-        $html,
-        $times
-    );
+        const minuto =
+          html.match(
+            /text-xl font-semibold tabular-nums text-white[^>]*>\s*([0-9]+)'/
+          )
 
-    $casa = $times[1][0] ?? '';
-    $fora = $times[1][1] ?? '';
+        if (minuto) {
 
-    // Placar
-    preg_match(
-        '/id="placar-time1"[^>]*>\s*([0-9]+)\s*</',
-        $html,
-        $p1
-    );
+          resultado.push({
+            home_team: casa,
+            away_team: fora,
+            home_score: p1?.[1] || "0",
+            away_score: p2?.[1] || "0",
+            minute: minuto[1],
+            url
+          })
 
-    preg_match(
-        '/id="placar-time2"[^>]*>\s*([0-9]+)\s*</',
-        $html,
-        $p2
-    );
+        }
+      }
 
-    $placarCasa = $p1[1] ?? '0';
-    $placarFora = $p2[1] ?? '0';
+      return new Response(
+        JSON.stringify({
+          success: true,
+          total: resultado.length,
+          games: resultado
+        }, null, 2),
+        {
+          headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+            "Access-Control-Allow-Origin": "*"
+          }
+        }
+      )
 
-    // Minuto
-    preg_match(
-        '/text-xl font-semibold tabular-nums text-white[^>]*>\s*([0-9]+)\'/s',
-        $html,
-        $min
-    );
+    } catch (e) {
 
-    $minuto = $min[1] ?? '';
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: e.toString()
+        }),
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
 
-    // Somente jogos ao vivo
-    if ($minuto != '')
-    {
-        $resultado[] = [
-            "home_team"  => $casa,
-            "away_team"  => $fora,
-            "home_score" => $placarCasa,
-            "away_score" => $placarFora,
-            "minute"     => $minuto,
-            "url"        => $url
-        ];
     }
-}
 
-echo json_encode([
-    "success" => true,
-    "total" => count($resultado),
-    "games" => $resultado
-], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+  }
+}
