@@ -21,7 +21,7 @@ export default {
 
       // Traduções PT-BR
       const transResp = await fetch(
-        "https://www.fotmob.com/_next/data/nVG1njYQRVXsfPs8R6YW_/pt-BR.json?lng=pt-BR",
+        "https://www.fotmob.com/api/translationmapping?locale=pt-BR",
         {
           headers: {
             "User-Agent": "Mozilla/5.0"
@@ -31,10 +31,7 @@ export default {
 
       const transData = await transResp.json();
 
-      const participants =
-        transData?.pageProps?.fallback?.[
-          "/api/translationmapping?locale=pt-BR"
-        ]?.Participants || {};
+      const participants = transData.Participants || {};
 
       const games = [];
 
@@ -52,11 +49,13 @@ export default {
 
           const homeName =
             participants[homeId] ||
+            match.home?.longName ||
             match.home?.name ||
             "";
 
           const awayName =
             participants[awayId] ||
+            match.away?.longName ||
             match.away?.name ||
             "";
 
