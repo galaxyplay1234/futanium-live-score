@@ -64,7 +64,7 @@ export default {
           // Fim de jogo
           if (status.finished === true) {
 
-            minute = "fim de jogo";
+            minute = "encerrado";
 
           }
 
