@@ -159,6 +159,10 @@ export default {
             } else if (raw === "AET") {
 
               minute = "prorrogação encerrada";
+            
+            } else if (raw === "IR") {
+
+              minute = "interrompido";
 
             } else {
 
