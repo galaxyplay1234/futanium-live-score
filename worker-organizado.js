@@ -67,6 +67,16 @@ export default {
       const transData = await transResp.json();
 
       const participants = transData.Participants || {};
+      
+
+// MAPEAMENTO DE NOMES
+const TEAM_MAP = {
+  "RDC": "RD Congo"
+};
+
+function normalizeTeam(name) {
+  return TEAM_MAP[name] || name;
+}
 
       const games = [];
 
@@ -84,25 +94,19 @@ export default {
 
           const awayId = String(match.away?.id || "");
 
-          const homeName =
+          const homeName = normalizeTeam(
+  participants[homeId] ||
+  match.home?.longName ||
+  match.home?.name ||
+  ""
+);
 
-            participants[homeId] ||
-
-            match.home?.longName ||
-
-            match.home?.name ||
-
-            "";
-
-          const awayName =
-
-            participants[awayId] ||
-
-            match.away?.longName ||
-
-            match.away?.name ||
-
-            "";
+const awayName = normalizeTeam(
+  participants[awayId] ||
+  match.away?.longName ||
+  match.away?.name ||
+  ""
+);
 
           let minute = "";
 
@@ -159,12 +163,13 @@ export default {
             } else if (raw === "AET") {
 
               minute = "prorrogação encerrada";
-            
-            } else if (raw === "IR") {
+
+            }
+            else if (raw === "IR") {
 
               minute = "interrompido";
 
-            } else {
+            }else {
 
               minute = raw;
 
