@@ -72,6 +72,8 @@ export default {
 // MAPEAMENTO DE NOMES
 const TEAM_MAP = {
   "RDC": "RD Congo"
+  "America MG": "América MG"
+  "Criciuma": "Criciúma"
 };
 
 function normalizeTeam(name) {
