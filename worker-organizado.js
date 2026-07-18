@@ -71,9 +71,13 @@ export default {
 
 // MAPEAMENTO DE NOMES
 const TEAM_MAP = {
-  "RDC": "RD Congo"
-  "America MG": "América MG"
-  "Criciuma": "Criciúma"
+  "RDC": "RD Congo",
+  "America MG": "América MG",
+  "Criciuma": "Criciúma",
+  "Gremio": "Grêmio",
+  "LA Galaxy": "Los Angeles Galaxy",
+  "Los Angeles FC": "Los Angeles",
+  "Países Baixos": "Holanda"
 };
 
 function normalizeTeam(name) {
