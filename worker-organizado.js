@@ -78,6 +78,8 @@ const TEAM_MAP = {
   "LA Galaxy": "Los Angeles Galaxy",
   "Los Angeles FC": "Los Angeles",
   "Chivas": "Guadalajara",
+  "Queretaro FC": "Querétaro",
+  "CF America": "Club America",
   "Países Baixos": "Holanda"
 };
 
