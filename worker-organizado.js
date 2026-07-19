@@ -77,6 +77,7 @@ const TEAM_MAP = {
   "Gremio": "Grêmio",
   "LA Galaxy": "Los Angeles Galaxy",
   "Los Angeles FC": "Los Angeles",
+  "Chivas": "Guadalajara",
   "Países Baixos": "Holanda"
 };
 
