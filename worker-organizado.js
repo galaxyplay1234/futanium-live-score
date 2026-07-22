@@ -81,6 +81,7 @@ const TEAM_MAP = {
   "Queretaro FC": "Querétaro",
   "CF America": "Club America",
   "Países Baixos": "Holanda"
+  "Atletico MG": "Atlético MG"
 };
 
 function normalizeTeam(name) {
