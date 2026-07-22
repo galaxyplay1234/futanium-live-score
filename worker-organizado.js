@@ -80,7 +80,7 @@ const TEAM_MAP = {
   "Chivas": "Guadalajara",
   "Queretaro FC": "Querétaro",
   "CF America": "Club America",
-  "Países Baixos": "Holanda"
+  "Países Baixos": "Holanda",
   "Atletico MG": "Atlético MG"
 };
 
