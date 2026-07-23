@@ -81,6 +81,9 @@ const TEAM_MAP = {
   "Queretaro FC": "Querétaro",
   "CF America": "Club America",
   "Países Baixos": "Holanda",
+  "Lanus": "Lanús",
+  "Sao Paulo": "São Paulo",
+  "Athletico Paranaense": "Athletico PR",
   "Atletico MG": "Atlético MG"
 };
 
