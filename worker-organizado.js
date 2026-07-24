@@ -84,6 +84,8 @@ const TEAM_MAP = {
   "Lanus": "Lanús",
   "Sao Paulo": "São Paulo",
   "Athletico Paranaense": "Athletico PR",
+  "Vitoria": "Vitória",
+  "Sarmiento": "Sarmiento Junin",
   "Atletico MG": "Atlético MG"
 };
 
