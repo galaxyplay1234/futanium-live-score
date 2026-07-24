@@ -86,6 +86,7 @@ const TEAM_MAP = {
   "Athletico Paranaense": "Athletico PR",
   "Vitoria": "Vitória",
   "Sarmiento": "Sarmiento Junin",
+  "Velez Sarsfield": "Vélez Sarsfield",
   "Atletico MG": "Atlético MG"
 };
 
