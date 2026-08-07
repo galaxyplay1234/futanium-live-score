@@ -88,6 +88,7 @@ const TEAM_MAP = {
   "Sarmiento": "Sarmiento Junin",
   "Velez Sarsfield": "Vélez Sarsfield",
   "Central Cordoba de Santiago": "Central Córdoba",
+  "Famalicao": "Famalicão",
   "Atletico MG": "Atlético MG"
 };
 
