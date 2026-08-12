@@ -87,8 +87,17 @@ const TEAM_MAP = {
   "Vitoria": "Vitória",
   "Sarmiento": "Sarmiento Junin",
   "Velez Sarsfield": "Vélez Sarsfield",
-  "Central Cordoba de Santiago": "Central Córdoba",
   "Famalicao": "Famalicão",
+  "Central Cordoba de Santiago": "Central Córdoba",
+  "Operario": "Operário",
+  "Sao Bernardo": "São Bernardo",
+  "Ceara": "Ceará",
+  "Estrela da Amadora": "Estrela Amadora",
+  "Sporting CP": "Sporting",
+  "Maritimo": "Marítimo",
+  "Vitoria de Guimaraes": "Vitória de Guimarães",
+  "Huracan": "Huracán",
+  "Universidad Catolica": "Universidad Católica",
   "Atletico MG": "Atlético MG"
 };
 
