@@ -98,6 +98,10 @@ const TEAM_MAP = {
   "Vitoria de Guimaraes": "Vitória de Guimarães",
   "Huracan": "Huracán",
   "Universidad Catolica": "Universidad Católica",
+  "Paris Saint-Germain": "PSG",
+  "Deportivo A Coruña": "A Coruna",
+  "Atletico Madrid": "Atlético de Madrid",
+  "Malaga": "Málaga",
   "Atletico MG": "Atlético MG"
 };
 
