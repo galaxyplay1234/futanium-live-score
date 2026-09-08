@@ -73,6 +73,9 @@ export default {
 const TEAM_MAP = {
   "RDC": "RD Congo",
   "America MG": "América MG",
+  "Borussia Mönchengladbach": "Monchengladbach",
+  "Atlético Madrid": "Atlético de Madrid",
+  "Bayern München": "Bayern de Munique",
   "Criciuma": "Criciúma",
   "Gremio": "Grêmio",
   "LA Galaxy": "Los Angeles Galaxy",
@@ -102,7 +105,12 @@ const TEAM_MAP = {
   "Deportivo A Coruña": "A Coruna",
   "Atletico Madrid": "Atlético de Madrid",
   "Malaga": "Málaga",
-  "Atletico MG": "Atlético MG"
+  "Deportivo Alaves": "Alavés",
+  "Athletic Club": "Athletic Bilbao",
+  "Celta Vigo": "Celta de Vigo",
+  "Al Hilal": "Al-Hilal",
+  "Al Ahli": "Al-Ahli",
+  "Atlético-MG": "Atlético MG"
 };
 
 function normalizeTeam(name) {
