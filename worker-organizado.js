@@ -118,6 +118,7 @@ export default {
         "Slavia Prague": "Slavia Praga",
         "Atlético Tucumán": "Atletico Tucuman",
         "Sabah FK": "Sabah Baku",
+        "Estudiantes de Río Cuarto": "Estudiantes de Rio Cuarto",
         "Atlético-MG": "Atlético MG"
 
       };
