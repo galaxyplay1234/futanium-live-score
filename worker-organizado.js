@@ -119,6 +119,7 @@ export default {
         "Atlético Tucumán": "Atletico Tucuman",
         "Sabah FK": "Sabah Baku",
         "Estudiantes de Río Cuarto": "Estudiantes de Rio Cuarto",
+        "FC Köln": "Koln",
         "Atlético-MG": "Atlético MG"
 
       };
