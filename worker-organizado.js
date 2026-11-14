@@ -121,7 +121,7 @@ export default {
         "Estudiantes de Río Cuarto": "Estudiantes de Rio Cuarto",
         "1. FC Köln": "Koln",
         "Estónia": "Estônia",
-        "Macedónia do Norte": Macedônia do Norte",
+        "Macedónia do Norte": "Macedônia do Norte",
         "Eslovénia": "Eslovênia",
         "Atlético-MG": "Atlético MG"
 
