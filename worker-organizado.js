@@ -122,6 +122,8 @@ export default {
         "1. FC Köln": "Koln",
         "Estónia": "Estônia",
         "Macedónia do Norte": "Macedônia do Norte",
+        "Roménia": "Romênia",
+        "Polónia": "Polônia",
         "Eslovénia": "Eslovênia",
         "Atlético-MG": "Atlético MG"
 
