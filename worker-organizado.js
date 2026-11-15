@@ -127,6 +127,8 @@ export default {
         "Eslovénia": "Eslovênia",
         "Arménia": "Armênia",
         "Letónia": "Letônia",
+        "Forlì": "Forli",
+        "Bielorrússia": "Belarus",
         "Atlético-MG": "Atlético MG"
 
       };
