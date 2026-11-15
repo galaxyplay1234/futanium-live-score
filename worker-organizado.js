@@ -125,6 +125,8 @@ export default {
         "Roménia": "Romênia",
         "Polónia": "Polônia",
         "Eslovénia": "Eslovênia",
+        "Arménia": " "Armênia",
+        "Letónia": "Letônia",
         "Atlético-MG": "Atlético MG"
 
       };
